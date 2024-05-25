@@ -4,6 +4,7 @@ import flixel.FlxG;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
+import objects.AxH;
 #if sys
 import sys.FileSystem;
 import sys.io.File;
@@ -16,6 +17,7 @@ class OptionsState extends FlxState
 
 	var backToMenu:FlxText = new FlxText(0, 632, FlxG.width, "Back to menu", 64);
 	var applyButton:FlxText = new FlxText(0, 504, FlxG.width, "Apply", 64);
+	var restartGame:FlxText = new FlxText(300, 504, FlxG.width, "Restart game to see changes", 64);
 
 	public var musicOptionDscSLC:Int = 0;
 
@@ -25,11 +27,11 @@ class OptionsState extends FlxState
 
 		musicOption.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
 		musicOptionDsc.setFormat(null, 32, FlxColor.WHITE, FlxTextAlign.LEFT);
-		add(musicOption);
-		add(musicOptionDsc);
-
 		backToMenu.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
 		applyButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
+		restartGame.setFormat(null, 25, FlxColor.WHITE, FlxTextAlign.CENTER);
+		add(musicOption);
+		add(musicOptionDsc);
 		add(backToMenu);
 		add(applyButton);
 	}
@@ -50,6 +52,8 @@ class OptionsState extends FlxState
 		if (FlxG.mouse.overlaps(applyButton) && FlxG.mouse.justPressed)
 		{
 			applySettings(musicOptionDsc.text);
+			add(restartGame);
+			AxH.wait(2000, removeRestart);
 		}
 
 		switch musicOptionDscSLC
@@ -71,7 +75,7 @@ class OptionsState extends FlxState
 	public static function applySettings(example:String)
 	{
 		#if sys
-		var dir = 'C:\\Users\\ehard\\OneDrive\\Desktop\\GameProjects2\\HaxeStuff\\HaxeFlixel\\AXE Engine\\assets\\data\\optionsData.txt';
+		var dir = 'assets\\data\\optionsData.txt';
 		File.write(dir, false);
 
 		var options:haxe.ds.List<String> = new List<String>();
@@ -90,7 +94,7 @@ class OptionsState extends FlxState
 		{
 			var fileContents = File.getContent(dir);
 
-			if (fileContents.indexOf("Example 1") != -1)
+			if (fileContents.indexOf("Color 1") != -1 || fileContents.indexOf("Color 2") != -1 || fileContents.indexOf("Color 3") != -1)
 			{
 				trace("The file contains 'Example'.");
 			}
@@ -104,5 +108,10 @@ class OptionsState extends FlxState
 			trace("File does not exist.");
 		}
 		#end
+	}
+
+	function removeRestart()
+	{
+		remove(restartGame);
 	}
 }

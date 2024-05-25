@@ -56,21 +56,21 @@ class MenuState extends FlxState
 		}
 
 		#if sys
-		var dir = 'C:\\Users\\ehard\\OneDrive\\Desktop\\GameProjects2\\HaxeStuff\\HaxeFlixel\\AXE Engine\\assets\\data\\optionsData.txt';
+		var dir = 'assets\\data\\optionsData.txt';
 
 		if (FileSystem.exists(dir))
 		{
 			var fileContents = File.getContent(dir);
 
-			if (fileContents.indexOf("Example 1") != -1)
+			if (fileContents.indexOf("Color 1") != -1)
 			{
 				settings(FlxColor.RED);
 			}
-			else if (fileContents.indexOf("Example 2") != -1)
+			else if (fileContents.indexOf("Color 2") != -1)
 			{
 				settings(FlxColor.BLUE);
 			}
-			else if (fileContents.indexOf("Example 3") != -1)
+			else if (fileContents.indexOf("Color 3") != -1)
 			{
 				settings(FlxColor.GREEN);
 			}
