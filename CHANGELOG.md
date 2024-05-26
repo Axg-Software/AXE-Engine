@@ -16,7 +16,8 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 ### Added
 - Starting framework for Save Data to be added
 - Working on transfering all `.txt` files that hold data to `.axh` files which are custom made by me
-### Changed
+### Fixed
+- Fixed wrong path for all save data paths
 
 ## V1.0 - 5-24-24
 ### Added
