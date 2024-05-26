@@ -56,7 +56,7 @@ class MenuState extends FlxState
 		}
 
 		#if sys
-		var dir = 'assets\\data\\optionsData.txt';
+		var dir = 'assets\\data\\optionsData.axh';
 
 		if (FileSystem.exists(dir))
 		{

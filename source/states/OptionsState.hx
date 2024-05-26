@@ -75,7 +75,7 @@ class OptionsState extends FlxState
 	public static function applySettings(example:String)
 	{
 		#if sys
-		var dir = 'assets\\data\\optionsData.txt';
+		var dir = 'assets\\data\\optionsData.axh';
 		File.write(dir, false);
 
 		var options:haxe.ds.List<String> = new List<String>();

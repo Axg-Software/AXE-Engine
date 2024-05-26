@@ -10,7 +10,7 @@ class SaveDataHandler
 	public static function saveData(playerX:Int, playerY:Int, room:Int)
 	{
 		#if sys
-		var dir = 'assets\\data\\saveData.txt';
+		var dir = 'assets\\data\\saveData.axh';
 		File.write(dir, false);
 
 		var options:haxe.ds.List<String> = new List<String>();
