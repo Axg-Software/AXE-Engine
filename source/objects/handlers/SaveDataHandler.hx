@@ -7,10 +7,10 @@ import sys.io.File;
 
 class SaveDataHandler
 {
-	public static function readSave(playerX:Int, playerY:Int, room:Int)
+	public static function saveData(playerX:Int, playerY:Int, room:Int)
 	{
 		#if sys
-		var dir = 'assets\\data\\SaveData.txt';
+		var dir = 'assets\\data\\saveData.txt';
 		File.write(dir, false);
 
 		var options:haxe.ds.List<String> = new List<String>();
