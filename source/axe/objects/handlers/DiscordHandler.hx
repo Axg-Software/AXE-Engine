@@ -1,6 +1,6 @@
 // stole dis from UTP lololol
 // thanks EyeDaleHim :)
-package objects.handlers;
+package axe.objects.handlers;
 
 import lime.app.Application;
 #if cpp
