@@ -7,7 +7,7 @@ import sys.io.File;
 
 class SaveDataHandler
 {
-	public static function saveData(playerX:Int, playerY:Int, room:Int)
+	public static function saveDataPlayer(playerX:Float, playerY:Float, room:Int)
 	{
 		#if sys
 		var dir = 'assets\\data\\saveData.axh';
