@@ -3,6 +3,14 @@ This is inspired by the [FNF changelog](https://github.com/FunkinCrew/Funkin/blo
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
+## V1.2.1 - 5-26-24
+### Added
+- Custom Icon
+### Changed
+- path for all thingies (axh script, handlers etc)
+### Removed
+- useless .json file
+
 ## V1.2 - 5-26-24
 ### Added
 - Icon for discord RPC

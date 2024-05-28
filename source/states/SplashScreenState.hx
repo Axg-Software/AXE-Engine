@@ -1,10 +1,10 @@
 package states;
 
+import axe.objects.handlers.DiscordHandler;
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import objects.handlers.DiscordHandler;
 
 class SplashScreenState extends FlxState
 {

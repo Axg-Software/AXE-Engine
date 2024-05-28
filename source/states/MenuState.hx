@@ -1,11 +1,11 @@
 package states;
 
+import axe.objects.WaterMark;
 import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import objects.WaterMark;
 #if sys
 import sys.FileSystem;
 import sys.io.File;

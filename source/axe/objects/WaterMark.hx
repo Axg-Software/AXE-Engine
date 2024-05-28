@@ -1,5 +1,5 @@
 // You can remove the watermark in your game if you want
-package objects;
+package axe.objects;
 
 import flixel.text.FlxText;
 
@@ -10,7 +10,7 @@ class WaterMark extends FlxText
 		super();
 		this.width = 32;
 		this.size = 16;
-		this.text = "AXE Engine V1.2";
+		this.text = "AXE Engine V1.2.1";
 		this.y = 681;
 	}
 }
