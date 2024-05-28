@@ -8,6 +8,7 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 - Custom Icon
 ### Changed
 - path for all thingies (axh script, handlers etc)
+- made Int to float in savedata handler so it actually works
 ### Removed
 - useless .json file
 
