@@ -3,6 +3,11 @@ This is inspired by the [FNF changelog](https://github.com/FunkinCrew/Funkin/blo
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
+## V1.3 - 5-27-24
+### Added
+- A custom scripting language (in VERY early works right now) You can currently use it to make a custom player
+- A example .txt on how to use Axon (the custom scripting language)
+
 ## V1.2.1 - 5-26-24
 ### Added
 - Custom Icon
