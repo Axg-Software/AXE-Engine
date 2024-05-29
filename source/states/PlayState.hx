@@ -12,6 +12,7 @@ import sys.io.File;
 class PlayState extends FlxState
 {
 	var customPlayer:FlxSprite;
+	var customEnemy:FlxSprite;
 
 	override public function create()
 	{
@@ -21,14 +22,29 @@ class PlayState extends FlxState
 		if (FileSystem.exists(dir))
 		{
 			var fileContents = File.getContent(dir);
-			if (fileContents.indexOf("XPX64") != -1
-				|| fileContents.indexOf("XPX128") != -1
-				|| fileContents.indexOf("XPX32") != -1
-				|| fileContents.indexOf("XPX16") != -1
-				|| fileContents.indexOf("XPX8") != -1)
+			if (fileContents.indexOf("XP X64") != -1
+				|| fileContents.indexOf("XP X128") != -1
+				|| fileContents.indexOf("XP X32") != -1
+				|| fileContents.indexOf("XP X16") != -1
+				|| fileContents.indexOf("XP X8") != -1)
 			{
 				customPlayer = new Player();
 				add(customPlayer);
+			}
+		}
+
+		var dir2 = 'assets\\data\\enemyData.axh';
+		if (FileSystem.exists(dir2))
+		{
+			var fileContents = File.getContent(dir2);
+			if (fileContents.indexOf("XE X64") != -1
+				|| fileContents.indexOf("XE X128") != -1
+				|| fileContents.indexOf("XE X32") != -1
+				|| fileContents.indexOf("XE X16") != -1
+				|| fileContents.indexOf("XE X8") != -1)
+			{
+				customEnemy = new Enemy();
+				add(customEnemy);
 			}
 		}
 		#end
