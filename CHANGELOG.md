@@ -5,7 +5,7 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
 
 
-## V1.3.2
+## V1.3.2 - BAREBONES EXCLUSIVE!
 ## Added
 - Barebones branch
 - Very early Achievement system
