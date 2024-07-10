@@ -17,6 +17,7 @@ class MenuState extends FlxState
 	var startButton:FlxText = new FlxText(0, 128, FlxG.width, "New Game", 0);
 	var creditsButton:FlxText = new FlxText(0, 192, FlxG.width, "Credits", 0);
 	var optionsButton:FlxText = new FlxText(0, 256, FlxG.width, "Options", 0);
+	var achievementButton:FlxText = new FlxText(0, 320, FlxG.width, "Achievements");
 	var waterMark:FlxText;
 	var axh:FlxBasic;
 
@@ -30,11 +31,13 @@ class MenuState extends FlxState
 		startButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
 		creditsButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
 		optionsButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
+		achievementButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
 
 		add(menuText);
 		add(startButton);
 		add(creditsButton);
 		add(optionsButton);
+		add(achievementButton);
 		add(waterMark);
 	}
 
@@ -55,7 +58,7 @@ class MenuState extends FlxState
 			FlxG.switchState(new OptionsState());
 		}
 
-		#if sys
+		#if sys // Replace this with whatever you want save data to be for in the menu
 		var dir = 'assets\\data\\optionsData.axh';
 
 		if (FileSystem.exists(dir))

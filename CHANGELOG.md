@@ -3,6 +3,13 @@ This is inspired by the [FNF changelog](https://github.com/FunkinCrew/Funkin/blo
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
+
+
+## V1.3.2
+## Added
+- Barebones branch
+- Very early Achievement system
+
 ## V1.3.1 - 5-28-24
 ### Added
 - Able to make a custom enemy with Axon (custom scripting language)

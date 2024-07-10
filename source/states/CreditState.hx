@@ -8,7 +8,7 @@ import flixel.util.FlxColor;
 class CreditState extends FlxState
 {
 	var backToMenu:FlxText = new FlxText(0, 632, FlxG.width, "Back to menu", 64);
-	var credits:FlxText = new FlxText(0, 0, FlxG.width, "Deep_Fried_Bread: Everything", 26);
+	var credits:FlxText = new FlxText(0, 0, FlxG.width, "Axuko: Everything", 26);
 
 	override public function create()
 	{
