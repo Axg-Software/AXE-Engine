@@ -55,7 +55,7 @@ class MenuState extends FlxState
 			FlxG.switchState(new OptionsState());
 		}
 
-		#if sys
+		#if sys // EXAMPLE FOR SAVE DATA!!
 		var dir = 'assets\\data\\optionsData.axh';
 
 		if (FileSystem.exists(dir))
