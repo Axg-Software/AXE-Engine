@@ -3,9 +3,11 @@ This is inspired by the [FNF changelog](https://github.com/FunkinCrew/Funkin/blo
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
-## V1.4??? - 0-0-00 | [W I P]
+## V1.4??? - 7-20-24 | [BIG UPDATE]
 ### Added
-- Finished achivement system
+- Backend support for Tiled maps to be imported
+- Backend support for Sprite Filters
+- Added functions in AxH.hx that are used for Sprite Filters
 ### Changed
 - you can tell how big each update is in the changelog
 ### Fixed
