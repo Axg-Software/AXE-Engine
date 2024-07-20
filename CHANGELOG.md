@@ -12,7 +12,6 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 - you can tell how big each update is in the changelog
 ### Fixed
 - Missing date in v1.3.2 changelog
-### Removed
 
 
 ## V1.3.2 - 7-9-24 | [MINOR UPDATE]
