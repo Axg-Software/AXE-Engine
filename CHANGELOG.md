@@ -3,7 +3,7 @@ This is inspired by the [FNF changelog](https://github.com/FunkinCrew/Funkin/blo
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
-## V1.4??? - 7-20-24 | [BIG UPDATE]
+## V1.4 - 7-20-24 | [BIG UPDATE]
 ### Added
 - Backend support for Tiled maps to be imported
 - Backend support for Sprite Filters
