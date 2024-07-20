@@ -1,6 +1,12 @@
 // A set of usefull libs I use in alot of my games!
 package axe.objects;
 
+import flash.filters.BitmapFilter;
+import flash.filters.BlurFilter;
+import flash.filters.DropShadowFilter;
+import flash.filters.GlowFilter;
+import flixel.FlxSprite;
+import flixel.graphics.frames.FlxFilterFrames;
 import haxe.Timer;
 #if sys
 import sys.FileSystem;
@@ -10,6 +16,8 @@ import sys.io.Process;
 
 class AxH
 {
+	static inline var SIZE_INCREASE:Int = 50;
+
 	public static function wait(milliseconds:Int, callback:Void->Void)
 	{
 		Timer.delay(callback, milliseconds);
@@ -23,5 +31,19 @@ class AxH
 		var result = Sys.command(gitCommand);
 		trace(result);
 		#end
+	}
+
+	public static function createFilterFrames(sprite:FlxSprite, filter:BitmapFilter)
+	{
+		var filterFrames = FlxFilterFrames.fromFrames(sprite.frames, SIZE_INCREASE, SIZE_INCREASE, [filter]);
+		updateFilter(sprite, filterFrames);
+		return filterFrames;
+	}
+
+	public static function updateFilter(spr:FlxSprite, sprFilter:FlxFilterFrames)
+	{
+		// Reset the offset, it will ballon with each apply call
+		spr.offset.set();
+		sprFilter.applyToSprite(spr, false, true);
 	}
 }
