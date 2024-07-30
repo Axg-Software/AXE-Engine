@@ -1,3 +1,4 @@
+// Idea: There can only be 5 achievements per game it would make it more ez to add
 package axe.objects.handlers;
 
 #if sys

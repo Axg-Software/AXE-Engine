@@ -56,6 +56,10 @@ class OptionsState extends FlxState
 			AxH.wait(2000, removeRestart);
 		}
 
+		AxH.changeColorOfButtonWhenHovering(musicOptionDsc, FlxColor.RED, FlxColor.WHITE);
+		AxH.changeColorOfButtonWhenHovering(backToMenu, FlxColor.RED, FlxColor.WHITE);
+		AxH.changeColorOfButtonWhenHovering(applyButton, FlxColor.RED, FlxColor.WHITE);
+
 		switch musicOptionDscSLC
 		{
 			case 0:
