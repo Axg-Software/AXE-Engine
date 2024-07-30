@@ -42,11 +42,11 @@ class Flixel extends FlxView3D
 
 		lightPicker = new StaticLightPicker([light]);
 
-		material = new TextureMaterial(Cast.bitmapTexture("assets/Flixel Color.png"));
+		material = new TextureMaterial(Cast.bitmapTexture("assets/test3d/Flixel Color.png"));
 		material.lightPicker = lightPicker;
 
-		var __flixelModel = Assets.getBytes("assets/flixel.obj");
-		assetLoaderContext.mapUrlToData("flixel.mtl", Assets.getBytes("assets/flixel.mtl"));
+		var __flixelModel = Assets.getBytes("assets/test3d/flixel.obj");
+		assetLoaderContext.mapUrlToData("flixel.mtl", Assets.getBytes("assets/test3d/flixel.mtl"));
 
 		_loader = new Loader3D();
 		_loader.loadData(__flixelModel, assetLoaderContext, null, new OBJParser());

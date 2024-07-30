@@ -3,9 +3,8 @@ This is inspired by the [FNF changelog](https://github.com/FunkinCrew/Funkin/blo
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
-## V1.5 BETA - 7-29-24 | [BIGGEST UPDATE]
+## V1.5 - 7-30-24 | [BIGGEST UPDATE]
 ### Added
-- Full achievement system (TODO)
 - Added a button to go straight to the options menu in the pause menu
 - Added a exit button to return to menu in the options menu
 - Added a exit button in the main menu
@@ -13,8 +12,7 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 - Buttons change color when hovering over them in Menu
 - Added a blank .txt file in the tiled folder
 - Added ability to make 3d games using HaxeFlixel 3D
-    - The two cons is that it is currently only for html5 and
-    - The game freezes when pressing THREE to enter the 3d test state but the abilites are there to make a 3d game
+    - The only con is that the 3d is currently only for html5
 ### Changed
 - Layout of the pause menu
 - Changed my name to "Axuko" in the credits
