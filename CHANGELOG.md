@@ -3,7 +3,7 @@ This is inspired by the [FNF changelog](https://github.com/FunkinCrew/Funkin/blo
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
-## V1.5 - 7-29-24 | [BIGGEST UPDATE]
+## V1.5 BETA - 7-29-24 | [BIGGEST UPDATE]
 ### Added
 - Full achievement system (TODO)
 - Added a button to go straight to the options menu in the pause menu
