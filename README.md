@@ -7,8 +7,10 @@ those being:
 
 ## Credits: 
 
-Axuko - Did Everything.
+- Axuko - Did Everything.
 
 ## Special thanks to:
 
-EyeDaleHim - For discord RPC code.
+- EyeDaleHim - For discord RPC code.
+- Lunarcleint - For Haxeflixel 3D
+- The Away3D Team - For Away3D (the base of Haxeflixel 3D)

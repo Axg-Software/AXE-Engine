@@ -5,8 +5,11 @@ import flash.filters.BitmapFilter;
 import flash.filters.BlurFilter;
 import flash.filters.DropShadowFilter;
 import flash.filters.GlowFilter;
+import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxFilterFrames;
+import flixel.text.FlxText;
+import flixel.util.FlxColor;
 import haxe.Timer;
 #if sys
 import sys.FileSystem;
@@ -45,5 +48,17 @@ class AxH
 		// Reset the offset, it will ballon with each apply call
 		spr.offset.set();
 		sprFilter.applyToSprite(spr, false, true);
+	}
+
+	public static function changeColorOfButtonWhenHovering(FlxText:FlxText, NewColor:FlxColor, DefaultColor:FlxColor)
+	{
+		if (FlxG.mouse.overlaps(FlxText))
+		{
+			FlxText.color = NewColor;
+		}
+		else
+		{
+			FlxText.color = DefaultColor;
+		}
 	}
 }

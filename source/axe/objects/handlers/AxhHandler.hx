@@ -1,3 +1,4 @@
+// This is completely optional you can remove axon scripting from your game if you want
 package axe.objects.handlers;
 
 import flixel.FlxG;
