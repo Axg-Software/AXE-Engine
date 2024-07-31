@@ -18,12 +18,9 @@ If you want to compile to windows recent of [V1.5](PUTLINK!!!) you have to remov
 
 And next you want to remove this block of code in `MenuState.hx`
 
-    if (FlxG.keys.justPressed.THREE)
-
+    	if (FlxG.keys.justPressed.THREE)
 	{
-
 		FlxG.switchState(new Test3dState());
-
 	}
 
 
