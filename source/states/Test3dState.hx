@@ -15,6 +15,15 @@ class Test3dState extends FlxState
 		add(flixel);
 	}
 
+	override function update(elapsed:Float)
+	{
+		super.update(elapsed);
+		if (FlxG.keys.justPressed.BACKSPACE)
+		{
+			FlxG.switchState(new MenuState());
+		}
+	}
+
 	override function destroy()
 	{
 		super.destroy();

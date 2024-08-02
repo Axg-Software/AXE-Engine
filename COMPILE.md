@@ -10,7 +10,7 @@ Do `Lime test PLATFORM` or `Lime test PLATFORM -debug` if you want to go into de
 
 Make sure to replace `PLATFORM` with your machine OS (Linux, Mac, Windows, etc)
 
-If you want to compile to windows recent of [V1.5](PUTLINK!!!) you have to remove all 3d .hx files so those including:
+If you want to compile to windows recent of [V1.5](https://github.com/Axg-Software/AXE-Engine/commit/f8ab0c7a4f27b8a4311f4388fcfba847164be6da) you have to remove all 3d .hx files so those including:
 - The entire away3d folder
 - The entire flx3D folder
 - The entire openfl folder
@@ -19,11 +19,8 @@ If you want to compile to windows recent of [V1.5](PUTLINK!!!) you have to remov
 And next you want to remove this block of code in `MenuState.hx`
 
     if (FlxG.keys.justPressed.THREE)
-
 	{
-
 		FlxG.switchState(new Test3dState());
-
 	}
 
 

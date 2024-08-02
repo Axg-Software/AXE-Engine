@@ -1,4 +1,4 @@
-package;
+package; // Kinda just replace this wit the model you want to use
 
 import away3d.entities.Mesh;
 import away3d.events.Asset3DEvent;
@@ -78,20 +78,20 @@ class Flixel extends FlxView3D
 			{
 				if (FlxG.keys.pressed.A)
 				{
-					mesh.rotationY += 10 * elapsed;
+					mesh.moveLeft(1);
 				}
 				else if (FlxG.keys.pressed.D)
 				{
-					mesh.rotationY -= 10 * elapsed;
+					mesh.moveRight(1);
 				}
 
 				if (FlxG.keys.pressed.W)
 				{
-					mesh.rotationX += 10 * elapsed;
+					mesh.moveDown(1);
 				}
 				else if (FlxG.keys.pressed.S)
 				{
-					mesh.rotationX -= 10 * elapsed;
+					mesh.moveUp(1);
 				}
 			}
 		}
