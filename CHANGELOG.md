@@ -3,13 +3,6 @@ This is inspired by the [FNF changelog](https://github.com/FunkinCrew/Funkin/blo
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
-## 1.5.1 - 8-1-24 | [MINOR UPDATE]
-### Added
-- You can go back to menu when in the 3D test state by pressing backspace
-- A .txt file for ideas for future updates
-### Changed
-- How the flixel logo looks up in 3D test state
-
 ## V1.5 - 7-30-24 | [BIGGEST UPDATE]
 ### Added
 - Added a button to go straight to the options menu in the pause menu
