@@ -1,11 +1,6 @@
 package states;
 
-import axe.objects.handlers.AxhHandler;
 import axe.objects.handlers.TiledLevel;
-import flash.filters.BitmapFilter;
-import flash.filters.BlurFilter;
-import flash.filters.DropShadowFilter;
-import flash.filters.GlowFilter;
 import flixel.FlxG;
 import flixel.FlxObject;
 import flixel.FlxSprite;
@@ -13,10 +8,6 @@ import flixel.FlxState;
 import flixel.group.FlxGroup;
 import flixel.text.FlxText;
 import states.substates.PauseSubState;
-#if sys
-import sys.FileSystem;
-import sys.io.File;
-#end
 
 class PlayState extends FlxState
 {

@@ -8,10 +8,6 @@ import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import openfl.system.System;
-#if sys
-import sys.FileSystem;
-import sys.io.File;
-#end
 
 class MenuState extends FlxState
 {
@@ -64,45 +60,27 @@ class MenuState extends FlxState
 			System.exit(69);
 		}
 
-		if (FlxG.keys.justPressed.THREE)
-		{
-			FlxG.switchState(new Test3dState());
-		}
-
 		AxH.changeColorOfButtonWhenHovering(startButton, FlxColor.RED, FlxColor.WHITE);
 		AxH.changeColorOfButtonWhenHovering(creditsButton, FlxColor.RED, FlxColor.WHITE);
 		AxH.changeColorOfButtonWhenHovering(optionsButton, FlxColor.RED, FlxColor.WHITE);
 		AxH.changeColorOfButtonWhenHovering(exitButton, FlxColor.RED, FlxColor.WHITE);
 
-		#if sys // EXAMPLE FOR SAVE DATA!!
-		var dir = 'assets\\data\\optionsData.axh';
-
-		if (FileSystem.exists(dir))
+		if (FlxG.save.data.mainMenuColor == "Color 1")
 		{
-			var fileContents = File.getContent(dir);
-
-			if (fileContents.indexOf("Color 1") != -1)
-			{
-				settings(FlxColor.RED);
-			}
-			else if (fileContents.indexOf("Color 2") != -1)
-			{
-				settings(FlxColor.BLUE);
-			}
-			else if (fileContents.indexOf("Color 3") != -1)
-			{
-				settings(FlxColor.GREEN);
-			}
-			else
-			{
-				settings(FlxColor.WHITE);
-			}
+			settings(FlxColor.RED);
+		}
+		else if (FlxG.save.data.mainMenuColor == "Color 2")
+		{
+			settings(FlxColor.BLUE);
+		}
+		else if (FlxG.save.data.mainMenuColor == "Color 3")
+		{
+			settings(FlxColor.GREEN);
 		}
 		else
 		{
-			trace("File does not exist.");
+			settings(FlxColor.WHITE);
 		}
-		#end
 	}
 
 	function settings(color:FlxColor)

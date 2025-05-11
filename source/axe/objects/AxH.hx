@@ -2,9 +2,6 @@
 package axe.objects;
 
 import flash.filters.BitmapFilter;
-import flash.filters.BlurFilter;
-import flash.filters.DropShadowFilter;
-import flash.filters.GlowFilter;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.graphics.frames.FlxFilterFrames;
@@ -50,15 +47,15 @@ class AxH
 		sprFilter.applyToSprite(spr, false, true);
 	}
 
-	public static function changeColorOfButtonWhenHovering(FlxText:FlxText, NewColor:FlxColor, DefaultColor:FlxColor)
+	public static function changeColorOfButtonWhenHovering(flxText:FlxText, newColor:FlxColor, defaultColor:FlxColor)
 	{
-		if (FlxG.mouse.overlaps(FlxText))
+		if (FlxG.mouse.overlaps(flxText))
 		{
-			FlxText.color = NewColor;
+			flxText.color = newColor;
 		}
 		else
 		{
-			FlxText.color = DefaultColor;
+			flxText.color = defaultColor;
 		}
 	}
 }

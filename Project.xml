@@ -4,7 +4,7 @@
 
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="AXE Engine" file="AXE Engine" main="Main" version="1.3.1" company="Axuko" />
+	<app title="AXE Engine" file="AXE Engine" main="Main" version="1.6.0" company="Axuko" />
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
@@ -37,7 +37,6 @@
 
 	<haxelib name="flixel" />
 	<haxelib name="flixel-addons" />
-	<haxelib name="away3d"/>
 
 	<section if="cpp">
 		<haxelib name="hxdiscord_rpc"/>

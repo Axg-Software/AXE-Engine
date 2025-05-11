@@ -5,10 +5,6 @@ import flixel.FlxG;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-#if sys
-import sys.FileSystem;
-import sys.io.File;
-#end
 
 class OptionsState extends FlxState
 {
@@ -52,8 +48,6 @@ class OptionsState extends FlxState
 		if (FlxG.mouse.overlaps(applyButton) && FlxG.mouse.justPressed)
 		{
 			applySettings(musicOptionDsc.text);
-			add(restartGame);
-			AxH.wait(2000, removeRestart);
 		}
 
 		AxH.changeColorOfButtonWhenHovering(musicOptionDsc, FlxColor.RED, FlxColor.WHITE);
@@ -78,44 +72,7 @@ class OptionsState extends FlxState
 
 	public static function applySettings(example:String)
 	{
-		#if sys
-		var dir = 'assets\\data\\optionsData.axh';
-		File.write(dir, false);
-
-		var options:haxe.ds.List<String> = new List<String>();
-		options.add(example);
-
-		var output;
-
-		for (i in options)
-		{
-			output = File.append(dir, false);
-			output.writeString(i + "\n");
-			output.close();
-		}
-
-		if (FileSystem.exists(dir))
-		{
-			var fileContents = File.getContent(dir);
-
-			if (fileContents.indexOf("Color 1") != -1 || fileContents.indexOf("Color 2") != -1 || fileContents.indexOf("Color 3") != -1)
-			{
-				trace("The file contains 'Example'.");
-			}
-			else
-			{
-				trace("The file does not contain 'Example'.");
-			}
-		}
-		else
-		{
-			trace("File does not exist.");
-		}
-		#end
-	}
-
-	function removeRestart()
-	{
-		remove(restartGame);
+		FlxG.save.data.mainMenuColor = example;
+		FlxG.save.flush();
 	}
 }

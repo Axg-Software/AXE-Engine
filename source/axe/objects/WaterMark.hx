@@ -10,7 +10,7 @@ class WaterMark extends FlxText
 		super();
 		this.width = 32;
 		this.size = 16;
-		this.text = "AXE Engine V1.5.1";
+		this.text = "AXE Engine V1.6.0";
 		this.y = 681;
 	}
 }
