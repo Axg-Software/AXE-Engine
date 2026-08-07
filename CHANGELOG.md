@@ -1,15 +1,32 @@
 # Change log
-This is inspired by the [FNF changelog](https://github.com/FunkinCrew/Funkin/blob/main/CHANGELOG.md?plain=1)
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
-## V1.6 - 5-11-25
+## V1.7.0 - 8-7-26
+### Added
+- A dialouge system
+- A option in the option menu that allows you to skip the splash screen
+- A button in the options menu to erase your data
+- A confirmation for the erase data button to confirm you want to erase your data
+- A shader file so you can have shadows in your game
+- The logo for AXG Software in the splash screen which you can replace with your studio image
+### Changed
+- Overhauled layout of the options menu
+- Keybind for the pause menu from `P` to `ESCAPE`
+- Made it so you can press `V` to see the version instead of it always being there
+- The font used for the entire engine to: `November Font`
+### Removed
+- The apply button in the options menu so you only have to press "Back To Menu"
+- The option to change the color of the menu text
+
+## V1.6.0 - 5-11-25
 ### Changed
 - Overhauled the way saving stuff works in the engine
 - Overhauled the way the options menu works in the backend
 ### Removed
 - 3D stuff since it is too primitive to do anything with
-- Alot of just useless stuff in the assets folder
+- A lot of just useless stuff in the assets folder
 - The "BIGGEST UPDATE, MEDIUM UPDATE" stuff in CHANGELOG.md
 
 ## 1.5.1 - 8-1-24
@@ -19,7 +36,7 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 ### Changed
 - How the flixel logo looks up in 3D test state
 
-## V1.5 - 7-30-24
+## V1.5.0 - 7-30-24
 ### Added
 - Added a button to go straight to the options menu in the pause menu
 - Added a exit button to return to menu in the options menu
@@ -35,7 +52,7 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 ### Fixed
 - The 1.3.2 had two pounds instead of three which it was supposed to in CHANGLOG.md
 
-## V1.4 - 7-20-24
+## V1.4.0 - 7-20-24
 ### Added
 - Backend support for Tiled maps to be imported
 - Backend support for Sprite Filters
@@ -58,7 +75,7 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 ### Removed
 - Premade `.axh` scripts (so you have to make your own now)
 
-## V1.3 - 5-27-24
+## V1.3.0 - 5-27-24
 ### Added
 - A custom scripting language (in VERY early works right now) You can currently use it to make a custom player
 - A example .txt on how to use Axon (the custom scripting language)
@@ -71,7 +88,7 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 ### Removed
 - useless .json file
 
-## V1.2 - 5-26-24
+## V1.2.0 - 5-26-24
 ### Added
 - Icon for discord RPC
 ### Changed
@@ -80,7 +97,7 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 ### Fixed
 - Fixed game crash bug from first development branch commit 
 
-## V1.1 - 5-24-24
+## V1.1.0 - 5-24-24
 ### Added
 - Starting framework for Save Data (For your game) to be added
 - Working on transfering all `.txt` files that hold data to `.axh` files which are custom made by me
@@ -88,4 +105,4 @@ Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
 ## V1.0 - 5-24-24
 ### Added
-- Base game ig lol
+- Base engine ig lol

@@ -24,10 +24,10 @@ class PauseSubState extends FlxSubState
 	{
 		super.create();
 
-		pauseText.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.CENTER);
-		backText.setFormat(null, 32, FlxColor.WHITE, FlxTextAlign.CENTER);
-		optionsText.setFormat(null, 32, FlxColor.WHITE, FlxTextAlign.CENTER);
-		exitText.setFormat(null, 32, FlxColor.WHITE, FlxTextAlign.CENTER);
+		pauseText.setFormat(AssetPaths.novem_____ttf, 64, FlxColor.WHITE, FlxTextAlign.CENTER);
+		backText.setFormat(AssetPaths.novem_____ttf, 32, FlxColor.WHITE, FlxTextAlign.CENTER);
+		optionsText.setFormat(AssetPaths.novem_____ttf, 32, FlxColor.WHITE, FlxTextAlign.CENTER);
+		exitText.setFormat(AssetPaths.novem_____ttf, 32, FlxColor.WHITE, FlxTextAlign.CENTER);
 		add(pauseText);
 		add(backText);
 		add(optionsText);

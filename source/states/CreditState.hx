@@ -17,8 +17,8 @@ class CreditState extends FlxState
 	{
 		super.create();
 
-		credits.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.CENTER);
-		backToMenu.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
+		credits.setFormat(AssetPaths.novem_____ttf, 64, FlxColor.WHITE, FlxTextAlign.CENTER);
+		backToMenu.setFormat(AssetPaths.novem_____ttf, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
 
 		add(backToMenu);
 		add(credits);

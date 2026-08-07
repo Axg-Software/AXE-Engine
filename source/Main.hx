@@ -2,13 +2,13 @@ package;
 
 import flixel.FlxGame;
 import openfl.display.Sprite;
-import states.SplashScreenState;
+import states.InitState;
 
 class Main extends Sprite
 {
 	public function new()
 	{
 		super();
-		addChild(new FlxGame(0, 0, SplashScreenState, 60, 60, true, false));
+		addChild(new FlxGame(0, 0, InitState, 60, 60, true, false));
 	}
 }

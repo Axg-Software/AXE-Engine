@@ -1,0 +1,16 @@
+example:
+
+add(dialogue);
+dialogue.startDialogue
+([
+    "Hey there, stranger!",
+    "Welcome to our world.",
+    "Press SPACE or ENTER to continue..."
+]);
+
+OR
+
+You can use dialouge data and it would look like:
+
+add(dialogue);
+dialogue.startDialogue(DialogueData.PUKE_INTRO_ONE);

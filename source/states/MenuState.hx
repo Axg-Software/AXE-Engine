@@ -22,26 +22,42 @@ class MenuState extends FlxState
 	override function create()
 	{
 		super.create();
+		FlxG.mouse.visible = true;
 
 		waterMark = new WaterMark();
 
-		menuText.setFormat(null, 72, FlxColor.WHITE, FlxTextAlign.LEFT);
-		startButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
-		creditsButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
-		optionsButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
-		exitButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
+		menuText.setFormat(AssetPaths.novem_____ttf, 72, FlxColor.WHITE, FlxTextAlign.LEFT);
+		startButton.setFormat(AssetPaths.novem_____ttf, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
+		creditsButton.setFormat(AssetPaths.novem_____ttf, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
+		optionsButton.setFormat(AssetPaths.novem_____ttf, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
+		exitButton.setFormat(AssetPaths.novem_____ttf, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
 
 		add(menuText);
 		add(startButton);
 		add(creditsButton);
 		add(optionsButton);
 		add(exitButton);
-		add(waterMark);
 	}
 
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
+		if (FlxG.keys.pressed.V)
+		{
+			add(waterMark);
+		}
+		else
+		{
+			remove(waterMark);
+		}
+
+		if (FlxG.keys.pressed.E && FlxG.keys.pressed.D) // DELETE SOON
+		{
+			FlxG.save.erase();
+			FlxG.save.flush();
+			System.exit(69);
+		}
 
 		if (FlxG.mouse.overlaps(startButton) && FlxG.mouse.justPressed)
 		{
@@ -64,27 +80,5 @@ class MenuState extends FlxState
 		AxH.changeColorOfButtonWhenHovering(creditsButton, FlxColor.RED, FlxColor.WHITE);
 		AxH.changeColorOfButtonWhenHovering(optionsButton, FlxColor.RED, FlxColor.WHITE);
 		AxH.changeColorOfButtonWhenHovering(exitButton, FlxColor.RED, FlxColor.WHITE);
-
-		if (FlxG.save.data.mainMenuColor == "Color 1")
-		{
-			settings(FlxColor.RED);
-		}
-		else if (FlxG.save.data.mainMenuColor == "Color 2")
-		{
-			settings(FlxColor.BLUE);
-		}
-		else if (FlxG.save.data.mainMenuColor == "Color 3")
-		{
-			settings(FlxColor.GREEN);
-		}
-		else
-		{
-			settings(FlxColor.WHITE);
-		}
-	}
-
-	function settings(color:FlxColor)
-	{
-		menuText.color = color;
 	}
 }

@@ -2,77 +2,155 @@ package states;
 
 import axe.objects.AxH;
 import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 
 class OptionsState extends FlxState
 {
-	public var musicOption:FlxText = new FlxText(0, 0, FlxG.width, "Color of menu");
-	public var musicOptionDsc:FlxText = new FlxText(0, 64, FlxG.width, "Color 1");
+	var dscText:FlxText = new FlxText(521, 640, FlxG.width, "Shop auto saves when left.");
+	var optionsHeader:FlxText = new FlxText(9, 652, FlxG.width, "Options Menu");
+	var eraseSaveButton2:FlxSprite = new FlxSprite(496, 675, null);
 
-	var backToMenu:FlxText = new FlxText(0, 632, FlxG.width, "Back to menu", 64);
-	var applyButton:FlxText = new FlxText(0, 504, FlxG.width, "Apply", 64);
-	var restartGame:FlxText = new FlxText(300, 504, FlxG.width, "Restart game to see changes", 64);
+	var tempConfirmationText:FlxText = new FlxText(0, 360, FlxG.width, "Erease save data? Y / N"); // replace with a image eventually
+	var confirmationVar:Bool = false;
+	var eraseButtonSelectable:Bool = true;
 
-	public var musicOptionDscSLC:Int = 0;
+	public var skipSplashScreen:FlxText = new FlxText(0, 0, FlxG.width, "Skip Start Screen:");
+	public var skipSplashScreenDsc:FlxText = new FlxText(588, 25, FlxG.width, "Yes");
+
+	var backToMenu2:FlxSprite = new FlxSprite(806, 652, null);
+
+	public var skipSplashScreenDscSLC:Int;
 
 	override function create()
 	{
 		super.create();
 
-		musicOption.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
-		musicOptionDsc.setFormat(null, 32, FlxColor.WHITE, FlxTextAlign.LEFT);
-		backToMenu.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
-		applyButton.setFormat(null, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
-		restartGame.setFormat(null, 25, FlxColor.WHITE, FlxTextAlign.CENTER);
-		add(musicOption);
-		add(musicOptionDsc);
-		add(backToMenu);
-		add(applyButton);
+		if (FlxG.save.data.skipSplashScreen == "Yes")
+		{
+			skipSplashScreenDsc.text = "Yes";
+			skipSplashScreenDscSLC = 0;
+			FlxG.save.data.skipSplashScreen = skipSplashScreenDsc.text;
+			FlxG.save.flush();
+		}
+		else if (FlxG.save.data.skipSplashScreen == null || FlxG.save.data.skipSplashScreen == "No")
+		{
+			skipSplashScreenDsc.text = "No";
+			skipSplashScreenDscSLC = 1;
+			FlxG.save.data.skipSplashScreen = skipSplashScreenDsc.text;
+			FlxG.save.flush();
+		}
+
+		eraseSaveButton2.loadGraphic(AssetPaths.eraseSaveData__png, true, 244, 36);
+		eraseSaveButton2.animation.add("nonHover", [0], 0);
+		eraseSaveButton2.animation.add("hover", [1], 0);
+
+		backToMenu2.loadGraphic(AssetPaths.backToMenu__png, true, 388, 68);
+		backToMenu2.animation.add("nonHover", [0], 0);
+		backToMenu2.animation.add("hover", [1], 0);
+
+		dscText.setFormat(AssetPaths.novem_____ttf, 16, FlxColor.WHITE);
+		optionsHeader.setFormat(AssetPaths.novem_____ttf, 64, FlxColor.WHITE);
+		skipSplashScreen.setFormat(AssetPaths.novem_____ttf, 64, FlxColor.WHITE, FlxTextAlign.LEFT);
+		skipSplashScreenDsc.setFormat(AssetPaths.novem_____ttf, 32, FlxColor.WHITE);
+		tempConfirmationText.setFormat(AssetPaths.novem_____ttf, 32, FlxColor.WHITE, FlxTextAlign.CENTER);
+
+		add(optionsHeader);
+		add(dscText);
+		add(eraseSaveButton2);
+		add(skipSplashScreen);
+		add(skipSplashScreenDsc);
+		add(backToMenu2);
 	}
 
 	override function update(elapsed:Float)
 	{
 		super.update(elapsed);
-		if (FlxG.mouse.overlaps(backToMenu) && FlxG.mouse.justPressed)
+
+		if (eraseButtonSelectable == true)
 		{
+			if (FlxG.mouse.overlaps(eraseSaveButton2))
+			{
+				eraseSaveButton2.animation.play("hover");
+			}
+			else
+			{
+				eraseSaveButton2.animation.play("nonHover");
+			}
+		}
+		else if (eraseButtonSelectable == false)
+		{
+			eraseSaveButton2.animation.play("nonHover");
+		}
+
+		if (FlxG.mouse.overlaps(backToMenu2))
+		{
+			backToMenu2.animation.play("hover");
+		}
+		else
+		{
+			backToMenu2.animation.play("nonHover");
+		}
+
+		if (FlxG.mouse.overlaps(backToMenu2) && FlxG.mouse.justPressed)
+		{
+			applySettings(skipSplashScreenDsc.text);
 			FlxG.switchState(new MenuState());
 		}
 
-		if (FlxG.mouse.overlaps(musicOptionDsc) && FlxG.mouse.justPressed)
+		if (FlxG.mouse.overlaps(skipSplashScreenDsc) && FlxG.mouse.justPressed)
 		{
-			musicOptionDscSLC = musicOptionDscSLC + 1;
+			skipSplashScreenDscSLC = skipSplashScreenDscSLC + 1;
 		}
 
-		if (FlxG.mouse.overlaps(applyButton) && FlxG.mouse.justPressed)
+		if (FlxG.mouse.overlaps(eraseSaveButton2) && FlxG.mouse.justPressed && eraseButtonSelectable == true)
 		{
-			applySettings(musicOptionDsc.text);
+			confirmationVar = true;
 		}
 
-		AxH.changeColorOfButtonWhenHovering(musicOptionDsc, FlxColor.RED, FlxColor.WHITE);
-		AxH.changeColorOfButtonWhenHovering(backToMenu, FlxColor.RED, FlxColor.WHITE);
-		AxH.changeColorOfButtonWhenHovering(applyButton, FlxColor.RED, FlxColor.WHITE);
+		AxH.changeColorOfButtonWhenHovering(skipSplashScreenDsc, FlxColor.RED, FlxColor.WHITE);
 
-		switch musicOptionDscSLC
+		switch skipSplashScreenDscSLC
 		{
 			case 0:
-				musicOptionDsc.text = "Color 1";
+				skipSplashScreenDsc.text = "Yes";
 			case 1:
-				musicOptionDsc.text = "Color 2";
-			case 2:
-				musicOptionDsc.text = "Color 3";
+				skipSplashScreenDsc.text = "No";
 		}
 
-		if (musicOptionDscSLC > 2)
+		if (skipSplashScreenDscSLC > 1)
 		{
-			musicOptionDscSLC = 0;
+			skipSplashScreenDscSLC = 0;
+		}
+
+		if (confirmationVar == true)
+		{
+			add(tempConfirmationText);
+			eraseButtonSelectable = false;
+
+			if (FlxG.keys.justPressed.Y)
+			{
+				eraseButtonSelectable = true;
+				FlxG.save.erase();
+				FlxG.switchState(new MenuState());
+			}
+			else if (FlxG.keys.justPressed.N)
+			{
+				confirmationVar = false;
+				eraseButtonSelectable = true;
+			}
+		}
+		else if (confirmationVar == false)
+		{
+			remove(tempConfirmationText);
 		}
 	}
 
 	public static function applySettings(example:String)
 	{
-		FlxG.save.data.mainMenuColor = example;
+		FlxG.save.data.skipSplashScreen = example;
 		FlxG.save.flush();
 	}
 }

@@ -3,6 +3,7 @@ To comlile the engine you need to follow the steps to install [HaxeFlixel](https
 
 ## Other libs you need to install!!
 - Other things that you need to install to compile this is: `Discord RPC` which you can install by running `haxelib install hxdiscord_rpc 1.1.1` in your terminal!
+- Also `haxelib install flixel-addons 4.0.1`
 
 ## How to run
 Do `Lime test PLATFORM` or `Lime test PLATFORM -debug` if you want to go into debug mode.
