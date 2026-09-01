@@ -3,6 +3,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 
 Written by [Axuko](https://github.com/Ethan-makes-music?tab=repositories)
 
+## V1.7.1 - 8-31-26
+### Changed
+- The text in the splashscreen from `"Nexus Delivery"` to `"AXE Engine"`
+
 ## V1.7.0 - 8-7-26
 ### Added
 - A dialouge system

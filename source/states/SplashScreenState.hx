@@ -57,7 +57,7 @@ class SplashScreenState extends FlxState
 
 	function onComplete2()
 	{
-		introText.text = "Nexus Delivery"; // maybe change this with a flashing neon sign like in the shop
+		introText.text = "AXE Engine"; // maybe change this with a flashing neon sign like in the shop
 		FlxG.camera.fade(FlxColor.BLACK, 3, false, onComplete3, false);
 	}
 
